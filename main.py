@@ -1,0 +1,93 @@
+from time import sleep
+"""Esse programa serve para controle de aumento e redução de salário."""
+
+"""Essa função exibe o menu e pede uma escolha"""
+def menu():
+    print('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|')
+    print('|                  Controle do Funcionário                  |')
+    print('|-----------------------------------------------------------|')
+    print('| 1 - Aumento de Salário                                    |')
+    print('| 2 - Redução de Salário                                    |')
+    print('|-----------------------------------------------------------|')
+    escolha = int(input("| Escolha: "))
+    sleep(1)
+    print('|-----------------------------------------------------------|')
+    return escolha
+
+"""Essa função pede o nome do funcionário, e retorna o mesmo"""
+def nome_funcionario():
+    nome_do_funcionario = str(input("| Nome do funcionário: "))
+    sleep(1)
+    print('|-----------------------------------------------------------|')
+    print('|             informações pessoais do funcionário           |')
+    print('|-----------------------------------------------------------|')
+    sleep(0.5)
+    print(f'| Funcionário: {nome_do_funcionario}')
+    print('|-----------------------------------------------------------|')
+    sleep(0.5)
+    return nome_do_funcionario
+
+def escolha_menu(escolha):
+    if escolha == 1:
+        print('|-----------------------------------------------------------|')
+        print('|                  Menu de aumento salarial                 |')
+        print('|-----------------------------------------------------------|')
+        sleep(0.5)
+        salario_antigo = str(input("| Salário antigo: R$"))
+        sleep(1)
+        salario_antigo_float = float(salario_antigo.replace('.', '').replace(',', '.'))
+        por_aumento_num = str(input("| Porcentagem do aumento: "))
+        sleep(1)
+        por_aumento_num_float = float(por_aumento_num.replace('.', '').replace(',', '.'))
+        salario_antigo_formatado = 'R${:,.2f}'.format(salario_antigo_float).replace(',', 'v').replace('.', ',').replace('v', '.')
+        print('|-----------------------------------------------------------|')
+        valor_aumento = por_aumento_num_float / 100 * salario_antigo_float
+        valor_aumento_formatado = 'R${:,.2f}'.format(valor_aumento).replace(',', 'v',).replace('.', ',').replace('v', '.')
+        novo_salario = salario_antigo_float + valor_aumento
+        novo_salario_formatado = 'R${:,.2f}'.format(novo_salario).replace(',', 'v').replace('.', ',').replace('v', '.')
+        sleep(0.5)
+        print('|-----------------------------------------------------------|')
+        print('|                    Detalhes pós aumento                   |')
+        print('|-----------------------------------------------------------|')
+        print(f'| Salário antigo: {salario_antigo_formatado}\n'
+              f'| Porcentagem do aumento: {por_aumento_num}%\n'
+              f'| Valor do aumento: {valor_aumento_formatado}\n'
+              f'| Salário novo: {novo_salario_formatado}')
+        print('|___________________________________________________________|')
+    elif escolha == 2:
+        sleep(0.5)
+        print('|-----------------------------------------------------------|')
+        print('|                  Menu de redução salarial                 |')
+        print('|-----------------------------------------------------------|')
+        sleep(0.5)
+        salario_antigo = str(input("| Salário antigo: R$"))
+        sleep(1)
+        salario_antigo_float = float(salario_antigo.replace('.', '').replace(',', '.'))
+        salario_antigo_formatado = 'R${:,.2f}'.format(salario_antigo_float).replace(',', 'v').replace('.', ',').replace('v','.')
+        por_reducao_num = str(input("| Porcentagem da redução: "))
+        sleep(1)
+        por_reducao_num_float = float(por_reducao_num.replace('.', '').replace(',', '.'))
+        print('|-----------------------------------------------------------|')
+        valor_reducao = por_reducao_num_float / 100 * salario_antigo_float
+        valor_reducao_formatado = 'R${:,.2f}'.format(valor_reducao).replace(',', 'v', ).replace('.', ',').replace('v','.')
+        novo_salario = salario_antigo_float - valor_reducao
+        novo_salario_formatado = 'R${:,.2f}'.format(novo_salario).replace(',', 'v').replace('.', ',').replace('v', '.')
+        sleep(0.5)
+        print('|-----------------------------------------------------------|')
+        print('|                   Detalhes pós redução                    |')
+        print('|-----------------------------------------------------------|')
+        sleep(0.5)
+        print(f'| Salário antigo: R${salario_antigo_formatado}\n'
+              f'| Porcentagem da redução: {por_reducao_num}%\n'
+              f'| Valor da redução: R${valor_reducao_formatado}\n'
+              f'| Salário novo: R${novo_salario_formatado}')
+        print('|____________________________________________________________|')
+
+
+
+if __name__ == '__main__':
+    menu_opc = menu()
+    info = nome_funcionario()
+    escolha_menu(menu_opc)
+
+
