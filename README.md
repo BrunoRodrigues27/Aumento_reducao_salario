@@ -2,6 +2,7 @@
 # 💼 Controle de Aumento e Redução Salarial
 
 > 🇧🇷 Um programa em Python para calcular aumentos e reduções salariais de forma simples, prática e com formatação brasileira.  
+> 🇺🇸 A Python program to calculate salary increases and reductions with Brazilian currency formatting.
 
 ## 🧠 Objetivo
 
@@ -121,11 +122,6 @@ Todos os valores são convertidos para `float` internamente, processados, e depo
 Feito por **Bruno Rodrigues**  
 
 ```
-
-
 ## 📜 Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
-
-
----
