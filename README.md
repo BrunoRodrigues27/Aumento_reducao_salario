@@ -21,8 +21,17 @@ O objetivo deste projeto é criar um sistema simples de controle salarial para f
 
 ## ▶️ Como usar
 
-1. **Execute o script no terminal ou no PyCharm**  
-   Certifique-se de estar usando Python 3 e digite o seguinte comando (ajuste conforme o caminho do seu projeto):
+1. **Clone o repositório para sua máquina:**
+
+   ```bash
+   git clone https://github.com/BrunoRodrigues27/Aumento_reducao_salario.git
+   cd Projeto_aumento_reducao_salario
+   ```
+
+2. **Certifique-se de que o Python 3 está instalado.**
+
+3. **Execute o script no terminal ou no PyCharm**  
+   Digite o seguinte comando:
 
    ```bash
    python main.py
@@ -30,7 +39,7 @@ O objetivo deste projeto é criar um sistema simples de controle salarial para f
 
    Ou, no PyCharm, apenas clique em **Run** no arquivo `main.py`.
 
-2. **Siga as instruções do menu:**  
+4. **Siga as instruções do menu:**  
    Você verá um menu como este:
 
    ```
@@ -46,12 +55,12 @@ O objetivo deste projeto é criar um sistema simples de controle salarial para f
    - `1` para **Aumento de Salário**
    - `2` para **Redução de Salário**
 
-3. **Preencha as informações:**  
+5. **Preencha as informações:**  
    - Nome do funcionário
    - Salário antigo (ex: `2.345,80`) — no **formato brasileiro** com vírgula
    - Porcentagem do aumento ou redução (ex: `12,5`)
 
-4. **Veja o resultado formatado com todos os detalhes:**  
+6. **Veja o resultado formatado com todos os detalhes:**  
    O programa exibirá os valores calculados e formatados corretamente com `R$`, vírgula decimal, e ponto de milhar.
 
 ## 📌 Exemplo de execução real
