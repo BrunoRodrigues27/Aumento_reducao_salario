@@ -127,10 +127,10 @@ Todos os valores são convertidos para `float` internamente, processados, e depo
 
 ## 🧑‍💻 Autor
 
-Feito por **Bruno Rodrigues Gonçalves de Oliveira**
-Email: **bruno.rodrigues201800@gmail.com**
-Email 2: **b.rodrigues.dev@outlook.com**
-Celular: **(21) 98152-5531**
+- Feito por **Bruno Rodrigues Gonçalves de Oliveira**
+- Email: **bruno.rodrigues201800@gmail.com**
+- Email 2: **b.rodrigues.dev@outlook.com**
+- Celular: **(21) 98152-5531**
 ```
 ## 📜 Licença
 
