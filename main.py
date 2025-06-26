@@ -3,16 +3,24 @@ from time import sleep
 
 """Essa função exibe o menu e pede uma escolha"""
 def menu():
-    print('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|')
-    print('|                  Controle do Funcionário                  |')
-    print('|-----------------------------------------------------------|')
-    print('| 1 - Aumento de Salário                                    |')
-    print('| 2 - Redução de Salário                                    |')
-    print('|-----------------------------------------------------------|')
-    escolha = int(input("| Escolha: "))
-    sleep(1)
-    print('|-----------------------------------------------------------|')
-    return escolha
+    while True:
+        print('|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|')
+        print('|                  Controle do Funcionário                  |')
+        print('|-----------------------------------------------------------|')
+        print('| 1 - Aumento de Salário                                    |')
+        print('| 2 - Redução de Salário                                    |')
+        print('|-----------------------------------------------------------|')
+        try:
+            escolha = int(input("| Escolha: "))
+            if escolha in [1, 2]:
+                print('|-----------------------------------------------------------|')
+                return escolha
+            else:
+                print('| Opção inválida. Por favor, digite 1 ou 2.')
+        except ValueError:
+            print('| Entrada inválida. Digite apenas números.')
+        print('|-----------------------------------------------------------|')
+
 
 """Essa função pede o nome do funcionário, e retorna o mesmo"""
 def nome_funcionario():
@@ -78,12 +86,15 @@ def escolha_menu(escolha):
               f'| Valor da redução: R${valor_reducao_formatado}\n'
               f'| Salário atualizado: R${novo_salario_formatado}')
         print('|____________________________________________________________|')
+    else:
+        print('| Escolha inválida!')
+        print('|------------------------------------------------------------|')
 
 
 
 if __name__ == '__main__':
     menu_opc = menu()
-    info = nome_funcionario()
     escolha_menu(menu_opc)
+    info = nome_funcionario()
 
 
