@@ -94,7 +94,8 @@ def escolha_menu(escolha):
 
 if __name__ == '__main__':
     menu_opc = menu()
-    escolha_menu(menu_opc)
     info = nome_funcionario()
+    escolha_menu(menu_opc)
+    
 
 
