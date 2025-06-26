@@ -22,7 +22,7 @@ def nome_funcionario():
     print('|             informações pessoais do funcionário           |')
     print('|-----------------------------------------------------------|')
     sleep(0.5)
-    print(f'| Funcionário: {nome_do_funcionario}')
+    print(f'| Funcionário: {nome_do_funcionario.strip().title()}')
     print('|-----------------------------------------------------------|')
     sleep(0.5)
     return nome_do_funcionario
@@ -33,13 +33,12 @@ def escolha_menu(escolha):
         print('|                  Menu de aumento salarial                 |')
         print('|-----------------------------------------------------------|')
         sleep(0.5)
-        salario_antigo = str(input("| Salário antigo: R$"))
+        salario_antigo = str(input("| Salário atual: R$"))
         sleep(1)
         salario_antigo_float = float(salario_antigo.replace('.', '').replace(',', '.'))
         por_aumento_num = str(input("| Porcentagem do aumento: "))
         sleep(1)
         por_aumento_num_float = float(por_aumento_num.replace('.', '').replace(',', '.'))
-        salario_antigo_formatado = 'R${:,.2f}'.format(salario_antigo_float).replace(',', 'v').replace('.', ',').replace('v', '.')
         print('|-----------------------------------------------------------|')
         valor_aumento = por_aumento_num_float / 100 * salario_antigo_float
         valor_aumento_formatado = 'R${:,.2f}'.format(valor_aumento).replace(',', 'v',).replace('.', ',').replace('v', '.')
@@ -49,10 +48,9 @@ def escolha_menu(escolha):
         print('|-----------------------------------------------------------|')
         print('|                    Detalhes pós aumento                   |')
         print('|-----------------------------------------------------------|')
-        print(f'| Salário antigo: {salario_antigo_formatado}\n'
-              f'| Porcentagem do aumento: {por_aumento_num}%\n'
+        print(f'| Porcentagem do aumento: {por_aumento_num}%\n'
               f'| Valor do aumento: {valor_aumento_formatado}\n'
-              f'| Salário novo: {novo_salario_formatado}')
+              f'| Salário atualizado {novo_salario_formatado}')
         print('|___________________________________________________________|')
     elif escolha == 2:
         sleep(0.5)
@@ -60,10 +58,9 @@ def escolha_menu(escolha):
         print('|                  Menu de redução salarial                 |')
         print('|-----------------------------------------------------------|')
         sleep(0.5)
-        salario_antigo = str(input("| Salário antigo: R$"))
+        salario_antigo = str(input("| Salário atual: R$"))
         sleep(1)
         salario_antigo_float = float(salario_antigo.replace('.', '').replace(',', '.'))
-        salario_antigo_formatado = 'R${:,.2f}'.format(salario_antigo_float).replace(',', 'v').replace('.', ',').replace('v','.')
         por_reducao_num = str(input("| Porcentagem da redução: "))
         sleep(1)
         por_reducao_num_float = float(por_reducao_num.replace('.', '').replace(',', '.'))
@@ -77,10 +74,9 @@ def escolha_menu(escolha):
         print('|                   Detalhes pós redução                    |')
         print('|-----------------------------------------------------------|')
         sleep(0.5)
-        print(f'| Salário antigo: R${salario_antigo_formatado}\n'
-              f'| Porcentagem da redução: {por_reducao_num}%\n'
+        print(f'| Porcentagem da redução: {por_reducao_num}%\n'
               f'| Valor da redução: R${valor_reducao_formatado}\n'
-              f'| Salário novo: R${novo_salario_formatado}')
+              f'| Salário atualizado: R${novo_salario_formatado}')
         print('|____________________________________________________________|')
 
 
